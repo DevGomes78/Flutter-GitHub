@@ -1,12 +1,9 @@
-# git_hub
+# Desifio GitHub
 
+O objetivo desse desafio é utilizar a API do GitHub para listar os 100 primeiros repositórios públicos criados no GitHub e ao clicarmos em algum dos repositórios, o aplicativo abra o link em um browser.
 A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)

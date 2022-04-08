@@ -18,7 +18,7 @@ Future<List<UserModel>?> GetUser() async {
       return lista;
     }
   } catch (e) {
-    print('Erro ao acessar a pagina');
+    print('Erro ao acessar a Pagina');
     return null;
   }
 }

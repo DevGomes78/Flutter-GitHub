@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:git_hub/controller/bucar_usuario.dart';
 import 'package:git_hub/controller/call_github.dart';
 import 'package:git_hub/controller/user_repository.dart';
 import 'package:git_hub/models/user_models.dart';
 import 'package:git_hub/views/shimmer.dart';
 
 class UserPage extends StatefulWidget {
-
   @override
   State<UserPage> createState() => _UserPageState();
-
 }
 
 class _UserPageState extends State<UserPage> {
   bool isLoading = false;
   List<UserModel> lista = [];
-
 
   @override
   void initState() {
@@ -41,13 +39,18 @@ class _UserPageState extends State<UserPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista de Usuarios GitHub'),
+        title: const Text('Lista de Usuarios'),
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed:  loadUser,
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: BuscaUsuario(),
+              );
+            },
             icon: const Icon(
-              Icons.refresh,
+              Icons.search,
             ),
           ),
         ],
@@ -55,7 +58,10 @@ class _UserPageState extends State<UserPage> {
       body: RefreshIndicator(
           onRefresh: GetUser,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 10,
+            ),
             child: ListView.builder(
                 itemCount: isLoading ? 10 : lista.length,
                 itemBuilder: (context, index) {

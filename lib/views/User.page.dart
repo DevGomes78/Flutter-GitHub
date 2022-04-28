@@ -27,7 +27,7 @@ class _UserPageState extends State<UserPage> {
     await Future.delayed(
       const Duration(seconds: 2),
     );
-    GetUser().then((map) {
+    GetUser(query: '').then((map) {
       setState(() {
         lista = map!;
       });
@@ -78,7 +78,7 @@ class _UserPageState extends State<UserPage> {
   buildCard(context, index) {
     var list = lista[index];
     return Card(
-      elevation: 5,
+      elevation: 0,
       child: ListTile(
         onTap: GitHub(userModel: list).callGithub,
         leading: CircleAvatar(
